@@ -199,7 +199,7 @@
           </p>
         </div>
 
-        <form id="patientRegistrationForm" class="space-y-8">
+        <form id="patientRegistrationForm" action="register_pat.php" method="POST" class="space-y-8">
           <!-- Personal Information -->
           <div>
             <h2
@@ -298,11 +298,7 @@
                     <span class="radio-mark"></span>
                     Female
                   </label>
-                  <label class="custom-radio">
-                    <input type="radio" name="gender" value="other" />
-                    <span class="radio-mark"></span>
-                    Other
-                  </label>
+              
                 </div>
                 <p class="error-message text-red-500 text-sm mt-1 hidden"></p>
               </div>
@@ -316,6 +312,22 @@
             >
               Medical Information
             </h2>
+            <div>
+                <label
+                  for="emer_phone"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Emergency Contact Number <span class="text-red-500">*</span></label
+                >
+                <input
+                  type="tel"
+                  id="emer_phone"
+                  name="emer_phone"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
+                />
+                <p class="error-message text-red-500 text-sm mt-1 hidden"></p>
+              </div>
+              <div class="py-3"></div>
             <div class="space-y-6">
               <div>
                 <label
@@ -332,88 +344,9 @@
                 ></textarea>
               </div>
 
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2"
-                  >Existing Conditions</label
-                >
-                <div
-                  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3"
-                >
-                  <label class="custom-checkbox">
-                    <input
-                      type="checkbox"
-                      name="conditions"
-                      value="hypertension"
-                    />
-                    <span class="checkmark"></span>
-                    Hypertension
-                  </label>
-                  <label class="custom-checkbox">
-                    <input type="checkbox" name="conditions" value="diabetes" />
-                    <span class="checkmark"></span>
-                    Diabetes
-                  </label>
-                  <label class="custom-checkbox">
-                    <input type="checkbox" name="conditions" value="asthma" />
-                    <span class="checkmark"></span>
-                    Asthma
-                  </label>
-                  <label class="custom-checkbox">
-                    <input
-                      type="checkbox"
-                      name="conditions"
-                      value="heart_disease"
-                    />
-                    <span class="checkmark"></span>
-                    Heart Disease
-                  </label>
-                  <label class="custom-checkbox">
-                    <input
-                      type="checkbox"
-                      name="conditions"
-                      value="arthritis"
-                    />
-                    <span class="checkmark"></span>
-                    Arthritis
-                  </label>
-                  <label class="custom-checkbox">
-                    <input type="checkbox" name="conditions" value="none" />
-                    <span class="checkmark"></span>
-                    None
-                  </label>
-                </div>
-              </div>
+             
 
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    for="medications"
-                    class="block text-sm font-medium text-gray-700 mb-1"
-                    >Current Medications</label
-                  >
-                  <input
-                    type="text"
-                    id="medications"
-                    name="medications"
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
-                    placeholder="Separate medications with commas"
-                  />
-                </div>
-                <div>
-                  <label
-                    for="allergies"
-                    class="block text-sm font-medium text-gray-700 mb-1"
-                    >Allergies</label
-                  >
-                  <input
-                    type="text"
-                    id="allergies"
-                    name="allergies"
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
-                    placeholder="Separate allergies with commas"
-                  />
-                </div>
-              </div>
+            
             </div>
           </div>
 
@@ -439,15 +372,7 @@
                     required
                     class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
                   />
-                  <button
-                    type="button"
-                    id="togglePassword"
-                    class="absolute inset-y-0 right-0 pr-3 flex items-center"
-                  >
-                    <div class="w-5 h-5 flex items-center justify-center">
-                      <i class="ri-eye-line text-gray-400"></i>
-                    </div>
-                  </button>
+              
                 </div>
               
                 <p class="error-message text-red-500 text-sm mt-1 hidden"></p>
@@ -466,14 +391,8 @@
                     required
                     class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
                   />
-                  <button
-                    type="button"
-                    id="toggleConfirmPassword"
-                    class="absolute inset-y-0 right-0 pr-3 flex items-center"
-                  >
-                    <div class="w-5 h-5 flex items-center justify-center">
-                      <i class="ri-eye-line text-gray-400"></i>
-                    </div>
+                 
+                 
                   </button>
                 </div>
                 <p class="error-message text-red-500 text-sm mt-1 hidden"></p>
@@ -489,33 +408,7 @@
 
          
 
-          <!-- Privacy & Terms -->
-          <div class="space-y-4">
-            <label class="custom-checkbox">
-              <input type="checkbox" name="privacyPolicy" required />
-              <span class="checkmark"></span>
-              I have read and agree to the
-              <a href="#" class="text-primary hover:underline"
-                >Privacy Policy</a
-              >
-              <span class="text-red-500">*</span>
-            </label>
-            <label class="custom-checkbox">
-              <input type="checkbox" name="termsOfService" required />
-              <span class="checkmark"></span>
-              I accept the
-              <a href="#" class="text-primary hover:underline"
-                >Terms of Service</a
-              >
-              <span class="text-red-500">*</span>
-            </label>
-            <label class="custom-checkbox">
-              <input type="checkbox" name="marketingConsent" />
-              <span class="checkmark"></span>
-              I would like to receive updates about new services and health tips
-              (optional)
-            </label>
-          </div>
+          
 
           <!-- Submit Button -->
           <div class="pt-4">
@@ -661,11 +554,7 @@
                   >Cookie Policy</a
                 >
               </li>
-              <li>
-                <a href="#" class="text-sm text-gray-600 hover:text-primary"
-                  >HIPAA Compliance</a
-                >
-              </li>
+              
               <li>
                 <a href="#" class="text-sm text-gray-600 hover:text-primary"
                   >Accessibility</a
@@ -679,103 +568,103 @@
             <p class="text-sm text-gray-500">
               &copy; 2025 MediConnect. All rights reserved.
             </p>
-            <div class="flex space-x-6 mt-4 md:mt-0">
-              <div class="w-8 h-5 flex items-center justify-center">
-                <i class="ri-visa-fill text-blue-600 text-xl"></i>
-              </div>
-              <div class="w-8 h-5 flex items-center justify-center">
-                <i class="ri-mastercard-fill text-orange-500 text-xl"></i>
-              </div>
-              <div class="w-8 h-5 flex items-center justify-center">
-                <i class="ri-paypal-fill text-blue-800 text-xl"></i>
-              </div>
-              <div class="w-8 h-5 flex items-center justify-center">
-                <i class="ri-apple-fill text-gray-800 text-xl"></i>
-              </div>
-            </div>
+           
           </div>
         </div>
       </div>
     </footer>
-
+<!--
     <script>
   document.addEventListener("DOMContentLoaded", function () {
-    // Password visibility toggle
-    const togglePassword = document.getElementById("togglePassword");
-    const password = document.getElementById("password");
-    const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
-    const confirmPassword = document.getElementById("confirmPassword");
-
-    togglePassword.addEventListener("click", function () {
-      const type = password.getAttribute("type") === "password" ? "text" : "password";
-      password.setAttribute("type", type);
-      togglePassword.innerHTML =
-        type === "password"
-          ? '<div class="w-5 h-5 flex items-center justify-center"><i class="ri-eye-line text-gray-400"></i></div>'
-          : '<div class="w-5 h-5 flex items-center justify-center"><i class="ri-eye-off-line text-gray-400"></i></div>';
-    });
-
-    toggleConfirmPassword.addEventListener("click", function () {
-      const type = confirmPassword.getAttribute("type") === "password" ? "text" : "password";
-      confirmPassword.setAttribute("type", type);
-      toggleConfirmPassword.innerHTML =
-        type === "password"
-          ? '<div class="w-5 h-5 flex items-center justify-center"><i class="ri-eye-line text-gray-400"></i></div>'
-          : '<div class="w-5 h-5 flex items-center justify-center"><i class="ri-eye-off-line text-gray-400"></i></div>';
-    });
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
-    // Form validation
     const form = document.getElementById("patientRegistrationForm");
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       let isValid = true;
 
-      // Reset all error messages
+      // Reset error messages
       document.querySelectorAll(".error-message").forEach((el) => {
         el.classList.add("hidden");
       });
 
-      // Validate required fields
+      // Validate fields
       const requiredFields = form.querySelectorAll("[required]");
       requiredFields.forEach((field) => {
-        if (!field.value.trim()) {
-          const errorMessage = field.nextElementSibling;
-          if (errorMessage && errorMessage.classList.contains("error-message")) {
+        if (field.type === "radio") {
+          const group = form.querySelectorAll(`[name="${field.name}"]`);
+          const isChecked = Array.from(group).some((radio) => radio.checked);
+          if (!isChecked) {
+            const errorMessage = field.closest("div").querySelector(".error-message");
             errorMessage.textContent = "This field is required";
             errorMessage.classList.remove("hidden");
+            isValid = false;
           }
+        } else if (!field.value.trim()) {
+          const errorMessage = field.nextElementSibling;
+          errorMessage.textContent = "This field is required";
+          errorMessage.classList.remove("hidden");
           isValid = false;
         }
       });
 
-      // Validate password match
+      // Validate passwords match
       const password = document.getElementById("password");
       const confirmPassword = document.getElementById("confirmPassword");
       if (password.value !== confirmPassword.value) {
         const errorMessage = confirmPassword.nextElementSibling;
-        if (errorMessage && errorMessage.classList.contains("error-message")) {
-          errorMessage.textContent = "Passwords do not match";
-          errorMessage.classList.remove("hidden");
-        }
+        errorMessage.textContent = "Passwords do not match";
+        errorMessage.classList.remove("hidden");
         isValid = false;
       }
 
-      // If form is valid, submit
-      if (isValid) {
-        const submitButton = document.getElementById("submitButton");
-        submitButton.disabled = true;
-        submitButton.innerHTML =
-          '<div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div> Creating Account...';
+      // If not valid, stop here
+      if (!isValid) return;
 
-        // Simulate form submission
-       
-      }
+      // Disable button and show loading
+      const submitButton = document.getElementById("submitButton");
+      submitButton.disabled = true;
+      submitButton.innerHTML = '<div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div> Creating Account...';
+
+      // Collect form data
+      const formData = {
+        firstName: form.firstName.value,
+        lastName: form.lastName.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        dob: form.dob.value,
+        gender: form.querySelector('input[name="gender"]:checked').value,
+        password: form.password.value,
+        medicalHistory: form.medicalHistory.value
+      };
+
+      // Submit with fetch
+      fetch('register_pat.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(res => res.json())
+      .then(data => {
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Create Account';
+
+        if (data.error) {
+          alert("Error: " + data.error);
+        } else {
+          alert("Success: " + data.message);
+          form.reset(); // optionally reset form
+        }
+      })
+      .catch(err => {
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Create Account';
+        alert("Something went wrong: " + err.message);
+      });
     });
   });
 </script>
-
+    -->
   </body>
 </html>

@@ -169,14 +169,14 @@
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
       >
         <a
-          href="https://readdy.ai/home/8628b541-af7f-4d14-afc2-842cb987387a/7262364f-1470-47b9-86a8-e716cc57299b"
-          data-readdy="true"
+          href=""
+       
           class="text-2xl font-['Pacifico'] text-primary"
           >MediConnect</a
         >
         <a
           href="new_home.php"
-          data-readdy="true"
+       
           class="flex items-center text-gray-600 hover:text-primary transition-colors"
         >
           <div class="w-5 h-5 flex items-center justify-center mr-1">
@@ -191,7 +191,7 @@
       <div class="bg-white shadow-md rounded-lg p-6 sm:p-8">
         <div class="text-center mb-8">
           <h1 class="text-3xl font-bold text-gray-900">
-            Create Patient Account
+            Create Doctor Account
           </h1>
           <p class="mt-2 text-gray-600">
             Join MediConnect to access quality healthcare services and manage
@@ -199,7 +199,7 @@
           </p>
         </div>
 
-        <form id="patientRegistrationForm" class="space-y-8">
+        <form id="doctorRegistrationForm" action="register_doc_handler.php" method="POST" class="space-y-8">
           <!-- Personal Information -->
           <div>
             <h2
@@ -298,11 +298,7 @@
                     <span class="radio-mark"></span>
                     Female
                   </label>
-                  <label class="custom-radio">
-                    <input type="radio" name="gender" value="other" />
-                    <span class="radio-mark"></span>
-                    Other
-                  </label>
+              
                 </div>
                 <p class="error-message text-red-500 text-sm mt-1 hidden"></p>
               </div>
@@ -314,106 +310,74 @@
             <h2
               class="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200"
             >
-              Medical Information
+              Professional Credentials
             </h2>
             <div class="space-y-6">
-              <div>
+              
+            <div class="mb-8">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Department</label>
+                        <div class="relative">
+                        <select name="department" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors" name="department" required>
+                           <option value="" selected disabled>Select your department</option>
+                           <option value="internal_medicine">Internal Medicine</option>
+                           <option value="surgery">Surgery</option>
+                           <option value="pediatrics">Pediatrics Department</option>
+                           <option value="emergency">Emergency Department (ER)</option>
+                           <option value="cardiology">Cardiology Department</option>
+                           <option value="oncology">Oncology Department</option>
+                           <option value="neurology">Neurology Department</option>
+                           <option value="radiology">Radiology Department</option>
+                           <option value="obstetrics_gynecology">Obstetrics & Gynecology</option>
+                           <option value="orthopedic">Orthopedic Department</option>
+                           <option value="psychiatry">Psychiatry Department</option>
+                           <option value="icu">ICU (Intensive Care Unit)</option>
+                           <option value="opd">Outpatient Department (OPD)</option>
+                           <option value="general_practice">General Practice</option>
+                           <option value="pathology">Pathology</option>
+                       </select>
+
+                            
+                            </div>
+            </div>
+
+            <div class="mb-8">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Medical Specialization</label>
+                        <div class="relative">
+                            <select name="specialization" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors">
+                            <option value="" selected disabled>Select your specialization</option>
+                            <option value="cardiology">Cardiology</option>
+                            <option value="dermatology">Dermatology</option>
+                            <option value="endocrinology">Endocrinology</option>
+                            <option value="gastroenterology">Gastroenterology</option>
+                            <option value="neurology">Neurology</option>
+                            <option value="obstetrics">Obstetrics & Gynecology</option>
+                            <option value="oncology">Oncology</option>
+                            <option value="pediatrics">Pediatrics</option>
+                            <option value="psychiatry">Psychiatry</option>
+                            <option value="urology">Urology</option>
+                            </select>
+                            
+                            </div>
+            </div>
+            <div>
                 <label
-                  for="medicalHistory"
+                  for="phone"
                   class="block text-sm font-medium text-gray-700 mb-1"
-                  >Medical History Summary</label
+                  >License Number <span class="text-red-500">*</span></label
                 >
-                <textarea
-                  id="medicalHistory"
-                  name="medicalHistory"
-                  rows="4"
+                <input
+                  type="text"
+                  id="license_number"
+                  name="licence_number"
+                  required
                   class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
-                  placeholder="Please provide a brief summary of your medical history..."
-                ></textarea>
+                />
+                <p class="error-message text-red-500 text-sm mt-1 hidden"></p>
               </div>
 
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2"
-                  >Existing Conditions</label
-                >
-                <div
-                  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3"
-                >
-                  <label class="custom-checkbox">
-                    <input
-                      type="checkbox"
-                      name="conditions"
-                      value="hypertension"
-                    />
-                    <span class="checkmark"></span>
-                    Hypertension
-                  </label>
-                  <label class="custom-checkbox">
-                    <input type="checkbox" name="conditions" value="diabetes" />
-                    <span class="checkmark"></span>
-                    Diabetes
-                  </label>
-                  <label class="custom-checkbox">
-                    <input type="checkbox" name="conditions" value="asthma" />
-                    <span class="checkmark"></span>
-                    Asthma
-                  </label>
-                  <label class="custom-checkbox">
-                    <input
-                      type="checkbox"
-                      name="conditions"
-                      value="heart_disease"
-                    />
-                    <span class="checkmark"></span>
-                    Heart Disease
-                  </label>
-                  <label class="custom-checkbox">
-                    <input
-                      type="checkbox"
-                      name="conditions"
-                      value="arthritis"
-                    />
-                    <span class="checkmark"></span>
-                    Arthritis
-                  </label>
-                  <label class="custom-checkbox">
-                    <input type="checkbox" name="conditions" value="none" />
-                    <span class="checkmark"></span>
-                    None
-                  </label>
-                </div>
-              </div>
+             
 
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    for="medications"
-                    class="block text-sm font-medium text-gray-700 mb-1"
-                    >Current Medications</label
-                  >
-                  <input
-                    type="text"
-                    id="medications"
-                    name="medications"
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
-                    placeholder="Separate medications with commas"
-                  />
-                </div>
-                <div>
-                  <label
-                    for="allergies"
-                    class="block text-sm font-medium text-gray-700 mb-1"
-                    >Allergies</label
-                  >
-                  <input
-                    type="text"
-                    id="allergies"
-                    name="allergies"
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
-                    placeholder="Separate allergies with commas"
-                  />
-                </div>
-              </div>
+            
             </div>
           </div>
 
@@ -439,25 +403,9 @@
                     required
                     class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
                   />
-                  <button
-                    type="button"
-                    id="togglePassword"
-                    class="absolute inset-y-0 right-0 pr-3 flex items-center"
-                  >
-                    <div class="w-5 h-5 flex items-center justify-center">
-                      <i class="ri-eye-line text-gray-400"></i>
-                    </div>
-                  </button>
+              
                 </div>
-                <div class="mt-2">
-                  <div class="w-full bg-gray-200 rounded-full h-1">
-                    <div
-                      id="passwordStrength"
-                      class="password-strength rounded-full"
-                    ></div>
-                  </div>
-                  
-                </div>
+              
                 <p class="error-message text-red-500 text-sm mt-1 hidden"></p>
               </div>
               <div>
@@ -474,14 +422,8 @@
                     required
                     class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
                   />
-                  <button
-                    type="button"
-                    id="toggleConfirmPassword"
-                    class="absolute inset-y-0 right-0 pr-3 flex items-center"
-                  >
-                    <div class="w-5 h-5 flex items-center justify-center">
-                      <i class="ri-eye-line text-gray-400"></i>
-                    </div>
+                 
+                 
                   </button>
                 </div>
                 <p class="error-message text-red-500 text-sm mt-1 hidden"></p>
@@ -497,33 +439,7 @@
 
          
 
-          <!-- Privacy & Terms -->
-          <div class="space-y-4">
-            <label class="custom-checkbox">
-              <input type="checkbox" name="privacyPolicy" required />
-              <span class="checkmark"></span>
-              I have read and agree to the
-              <a href="#" class="text-primary hover:underline"
-                >Privacy Policy</a
-              >
-              <span class="text-red-500">*</span>
-            </label>
-            <label class="custom-checkbox">
-              <input type="checkbox" name="termsOfService" required />
-              <span class="checkmark"></span>
-              I accept the
-              <a href="#" class="text-primary hover:underline"
-                >Terms of Service</a
-              >
-              <span class="text-red-500">*</span>
-            </label>
-            <label class="custom-checkbox">
-              <input type="checkbox" name="marketingConsent" />
-              <span class="checkmark"></span>
-              I would like to receive updates about new services and health tips
-              (optional)
-            </label>
-          </div>
+          
 
           <!-- Submit Button -->
           <div class="pt-4">
@@ -549,7 +465,7 @@
           <div class="md:col-span-1">
             <a
               href=""
-              data-readdy="true"
+            
               class="text-2xl font-['Pacifico'] text-primary"
               >MediConnect</a
             >
@@ -669,11 +585,7 @@
                   >Cookie Policy</a
                 >
               </li>
-              <li>
-                <a href="#" class="text-sm text-gray-600 hover:text-primary"
-                  >HIPAA Compliance</a
-                >
-              </li>
+              
               <li>
                 <a href="#" class="text-sm text-gray-600 hover:text-primary"
                   >Accessibility</a
@@ -687,103 +599,12 @@
             <p class="text-sm text-gray-500">
               &copy; 2025 MediConnect. All rights reserved.
             </p>
-            <div class="flex space-x-6 mt-4 md:mt-0">
-              <div class="w-8 h-5 flex items-center justify-center">
-                <i class="ri-visa-fill text-blue-600 text-xl"></i>
-              </div>
-              <div class="w-8 h-5 flex items-center justify-center">
-                <i class="ri-mastercard-fill text-orange-500 text-xl"></i>
-              </div>
-              <div class="w-8 h-5 flex items-center justify-center">
-                <i class="ri-paypal-fill text-blue-800 text-xl"></i>
-              </div>
-              <div class="w-8 h-5 flex items-center justify-center">
-                <i class="ri-apple-fill text-gray-800 text-xl"></i>
-              </div>
-            </div>
+           
           </div>
         </div>
       </div>
     </footer>
 
-    <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Password visibility toggle
-    const togglePassword = document.getElementById("togglePassword");
-    const password = document.getElementById("password");
-    const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
-    const confirmPassword = document.getElementById("confirmPassword");
-
-    togglePassword.addEventListener("click", function () {
-      const type = password.getAttribute("type") === "password" ? "text" : "password";
-      password.setAttribute("type", type);
-      togglePassword.innerHTML =
-        type === "password"
-          ? '<div class="w-5 h-5 flex items-center justify-center"><i class="ri-eye-line text-gray-400"></i></div>'
-          : '<div class="w-5 h-5 flex items-center justify-center"><i class="ri-eye-off-line text-gray-400"></i></div>';
-    });
-
-    toggleConfirmPassword.addEventListener("click", function () {
-      const type = confirmPassword.getAttribute("type") === "password" ? "text" : "password";
-      confirmPassword.setAttribute("type", type);
-      toggleConfirmPassword.innerHTML =
-        type === "password"
-          ? '<div class="w-5 h-5 flex items-center justify-center"><i class="ri-eye-line text-gray-400"></i></div>'
-          : '<div class="w-5 h-5 flex items-center justify-center"><i class="ri-eye-off-line text-gray-400"></i></div>';
-    });
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
-    // Form validation
-    const form = document.getElementById("patientRegistrationForm");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      let isValid = true;
-
-      // Reset all error messages
-      document.querySelectorAll(".error-message").forEach((el) => {
-        el.classList.add("hidden");
-      });
-
-      // Validate required fields
-      const requiredFields = form.querySelectorAll("[required]");
-      requiredFields.forEach((field) => {
-        if (!field.value.trim()) {
-          const errorMessage = field.nextElementSibling;
-          if (errorMessage && errorMessage.classList.contains("error-message")) {
-            errorMessage.textContent = "This field is required";
-            errorMessage.classList.remove("hidden");
-          }
-          isValid = false;
-        }
-      });
-
-      // Validate password match
-      const password = document.getElementById("password");
-      const confirmPassword = document.getElementById("confirmPassword");
-      if (password.value !== confirmPassword.value) {
-        const errorMessage = confirmPassword.nextElementSibling;
-        if (errorMessage && errorMessage.classList.contains("error-message")) {
-          errorMessage.textContent = "Passwords do not match";
-          errorMessage.classList.remove("hidden");
-        }
-        isValid = false;
-      }
-
-      // If form is valid, submit
-      if (isValid) {
-        const submitButton = document.getElementById("submitButton");
-        submitButton.disabled = true;
-        submitButton.innerHTML =
-          '<div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div> Creating Account...';
-
-        // Simulate form submission
-       
-      }
-    });
-  });
-</script>
-
+  
   </body>
 </html>
