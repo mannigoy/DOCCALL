@@ -89,12 +89,12 @@
             >
               <i class="ri-stethoscope-line ri-2x text-primary"></i>
             </div>
-            <h1 class="text-2xl font-bold text-gray-900">Doctor Login</h1>
-            <p class="text-gray-600 mt-2">Access your doctor dashboard</p>
+            <h1 class="text-2xl font-bold text-gray-900">Patient Login</h1>
+            <p class="text-gray-600 mt-2">Access your patient dashboard</p>
           </div>
 
           <!-- Login Form -->
-          <form id="login-form">
+          <form id="login-form" method="POST" action="patient_login_handler.php">
             <!-- Error Message Area -->
             <div
               id="error-message"
@@ -106,7 +106,7 @@
               <label
                 for="email"
                 class="block text-sm font-medium text-gray-700 mb-1"
-                >Email or Username</label
+                >Email</label
               >
               <div class="relative">
                 <div
@@ -119,7 +119,7 @@
                   id="email"
                   name="email"
                   class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-primary focus:border-primary text-sm"
-                  placeholder="Enter your email or username"
+                  placeholder="Enter your email"
                   required
                 />
               </div>
@@ -153,39 +153,12 @@
                   placeholder="Enter your password"
                   required
                 />
-                <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
-                  <i
-                    class="ri-eye-off-line text-gray-400 password-toggle"
-                    id="password-toggle"
-                  ></i>
-                </div>
+                
               </div>
             </div>
 
             <!-- Remember Me Checkbox -->
-            <div class="flex items-center mb-6">
-              <div class="relative flex items-center">
-                <input
-                  type="checkbox"
-                  id="remember"
-                  name="remember"
-                  class="opacity-0 absolute h-5 w-5"
-                />
-                <div
-                  class="bg-white border border-gray-300 rounded w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-primary"
-                >
-                  <svg
-                    class="fill-current hidden w-3 h-3 text-primary pointer-events-none"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                  </svg>
-                </div>
-                <label for="remember" class="text-sm text-gray-700 select-none"
-                  >Remember me</label
-                >
-              </div>
-            </div>
+            
 
             <!-- Login Button -->
             <button
@@ -202,9 +175,9 @@
             <p class="text-gray-600 text-sm">
               New to MediConnect?
               <a
-                href="#"
+                href="register_patient_new.php"
                 class="text-primary font-medium hover:text-primary/80 transition-colors"
-                >Register as Doctor</a
+                >Register as Patient</a
               >
             </p>
           </div>
@@ -244,75 +217,6 @@
       </div>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Password visibility toggle
-        const passwordToggle = document.getElementById("password-toggle");
-        const passwordField = document.getElementById("password");
-
-        passwordToggle.addEventListener("click", function () {
-          if (passwordField.type === "password") {
-            passwordField.type = "text";
-            passwordToggle.classList.remove("ri-eye-off-line");
-            passwordToggle.classList.add("ri-eye-line");
-          } else {
-            passwordField.type = "password";
-            passwordToggle.classList.remove("ri-eye-line");
-            passwordToggle.classList.add("ri-eye-off-line");
-          }
-        });
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        // Custom checkbox functionality
-        const checkbox = document.getElementById("remember");
-        const checkboxDiv = checkbox.nextElementSibling;
-
-        checkbox.addEventListener("change", function () {
-          if (this.checked) {
-            checkboxDiv.querySelector("svg").classList.remove("hidden");
-          } else {
-            checkboxDiv.querySelector("svg").classList.add("hidden");
-          }
-        });
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        // Form submission
-        const loginForm = document.getElementById("login-form");
-        const loginButton = document.getElementById("login-button");
-        const errorMessage = document.getElementById("error-message");
-
-        loginForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          // Simulate loading state
-          loginButton.disabled = true;
-          loginButton.innerHTML =
-            '<i class="ri-loader-4-line animate-spin mr-2"></i> Logging in...';
-
-          // Simulate API call
-          setTimeout(function () {
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-
-            // Simple validation for demo purposes
-            if (email && password) {
-              // Successful login would redirect to dashboard
-              // For demo, just show error is cleared and button reset
-              errorMessage.classList.add("hidden");
-              loginButton.disabled = false;
-              loginButton.innerHTML = "<span>Login</span>";
-            } else {
-              // Show error message
-              errorMessage.textContent = "Please enter both email and password.";
-              errorMessage.classList.remove("hidden");
-              loginButton.disabled = false;
-              loginButton.innerHTML = "<span>Login</span>";
-            }
-          }, 1500);
-        });
-      });
-    </script>
+   
   </body>
 </html>
