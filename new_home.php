@@ -9,7 +9,12 @@
       tailwind.config = {
         theme: {
           extend: {
+<<<<<<< HEAD
             colors: { primary: "#4CAF50", secondary: "#64B5F6" },
+=======
+            colors: {   primary: '#3b82f6',
+              secondary: '#6366f1' },
+>>>>>>> libron
             borderRadius: {
               none: "0px",
               sm: "4px",
@@ -50,6 +55,7 @@
     <!-- Navigation Bar -->
     <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
       <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+<<<<<<< HEAD
         <a href="#" class="text-2xl font-['Pacifico'] text-primary">logo</a>
         <!-- Desktop Navigation -->
         <nav class="flex items-center space-x-8">
@@ -57,6 +63,27 @@
           <a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors">About</a>
           <a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors">Services</a>
           <a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+=======
+      <div class="flex items-center space-x-2">
+    <img src="assets/logo_without.png" alt="Logo" class="h-10">
+    <span class="text-2xl font-bold">
+    <div class="flex items-center space-x-2">
+ 
+  <span class="text-2xl font-bold">
+    <span class="text-primary">DOC</span><span class="text-gray-500">CALL</span>
+  </span>
+</div>
+</span>
+  </div>
+   
+        <!-- Desktop Navigation -->
+         <div class="px-10"></div>
+        <nav class="flex items-center space-x-8">
+          <a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors px-10">Home</a>
+          <a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors px-10">About</a>
+          <a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors px-10">Services</a>
+          <a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors px-10">Contact</a>
+>>>>>>> libron
         </nav>
         <div class="flex items-center space-x-4">
           <a href="login_doc_new.php">
@@ -209,7 +236,15 @@
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-4 gap-8 mb-12">
           <div>
+<<<<<<< HEAD
             <a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">logo</a>
+=======
+  <div class="flex items-center space-x-2">
+  <img src="assets/logo_without.png" alt="Logo" class="h-10">
+  <span class="text-2xl font-bold">DOCCALL</span>
+</div>
+<div class="py-5"></div>
+>>>>>>> libron
             <p class="text-gray-400 mb-4">Connecting patients with trusted healthcare professionals for better health outcomes.</p>
             <div class="flex space-x-4">
               <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 hover:bg-primary transition-colors">
@@ -253,19 +288,31 @@
                 <div class="w-6 h-6 flex items-center justify-center mr-3 text-primary">
                   <i class="ri-map-pin-line"></i>
                 </div>
+<<<<<<< HEAD
                 <span class="text-gray-400">123 Healthcare Ave, Medical District, NY 10001</span>
+=======
+                <span class="text-gray-400">Natalio B. Bacalso Ave, Cebu City, 6000 Cebu</span>
+>>>>>>> libron
               </li>
               <li class="flex">
                 <div class="w-6 h-6 flex items-center justify-center mr-3 text-primary">
                   <i class="ri-phone-line"></i>
                 </div>
+<<<<<<< HEAD
                 <span class="text-gray-400">+1 (555) 123-4567</span>
+=======
+                <span class="text-gray-400">+639773761701</span>
+>>>>>>> libron
               </li>
               <li class="flex">
                 <div class="w-6 h-6 flex items-center justify-center mr-3 text-primary">
                   <i class="ri-mail-line"></i>
                 </div>
+<<<<<<< HEAD
                 <span class="text-gray-400">contact@mediconnect.com</span>
+=======
+                <span class="text-gray-400">contact@libronpielagodecretales.com</span>
+>>>>>>> libron
               </li>
               <li class="flex">
                 <div class="w-6 h-6 flex items-center justify-center mr-3 text-primary">
@@ -278,7 +325,11 @@
         </div>
         <div class="border-t border-gray-700 pt-8">
           <div class="flex justify-between items-center">
+<<<<<<< HEAD
             <p class="text-gray-400 text-sm">© 2025 MediConnect. All rights reserved.</p>
+=======
+            <p class="text-gray-400 text-sm">© 2025 LibronPielagoDecretales. All rights reserved.</p>
+>>>>>>> libron
             <div class="flex space-x-6">
               <a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Terms of Service</a>

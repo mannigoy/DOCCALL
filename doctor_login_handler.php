@@ -5,7 +5,7 @@ session_start();
 $host = 'localhost';
 $db   = 'docc_call_db';
 $user = 'root';
-$pass = 'root';
+$pass = "";
 
 // Connect to the database
 $conn = new mysqli($host, $user, $pass, $db);
@@ -22,8 +22,8 @@ function sanitize_input($data) {
 
 // Handle POST request
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = sanitize_input($_POST['email'] ?? '');
-    $password = $_POST['password'] ?? '';
+    $email = isset($_POST['email']) ? sanitize_input($_POST['email']) : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
 
     // Check if the email and password are empty
     if (empty($email) || empty($password)) {
@@ -62,6 +62,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['first_name'] = $user['first_name'];
             $_SESSION['last_name'] = $user['last_name'];
+            $_SESSION['user_id'] = $user['user_id'];
+            $_SESSION['role'] = $user['role'];  // Store the user's role
+
+            header("Location: appointment_doctor.php");
+            exit;
 
             // Send success response
             echo json_encode(['success' => true, 'message' => 'Login successful.']);

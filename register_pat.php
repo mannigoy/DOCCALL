@@ -3,7 +3,11 @@
 $host = 'localhost';
 $db   = 'docc_call_db';
 $user = 'root';
+<<<<<<< HEAD
 $pass = 'root';
+=======
+$pass = "";
+>>>>>>> libron
 
 // Connect to the database
 $conn = new mysqli($host, $user, $pass, $db);
@@ -93,6 +97,10 @@ if ($userStmt->execute()) {
 
     if ($patientStmt->execute()) {
         echo json_encode(['message' => 'Registration successful']);
+<<<<<<< HEAD
+=======
+        header("Location: login_pat_new.php");
+>>>>>>> libron
     } else {
         http_response_code(500);
         echo json_encode(['error' => 'Failed to save patient data']);

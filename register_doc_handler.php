@@ -3,7 +3,11 @@
 $host = 'localhost';
 $db   = 'docc_call_db';
 $user = 'root';
+<<<<<<< HEAD
 $pass = 'root';
+=======
+$pass = "";
+>>>>>>> libron
 
 // Connect to the database
 $conn = new mysqli($host, $user, $pass, $db);
@@ -91,7 +95,13 @@ if ($userStmt->execute()) {
     );
 
     if ($doctorStmt->execute()) {
+<<<<<<< HEAD
         echo json_encode(['message' => 'Doctor registration successful']);
+=======
+        // Redirect to appointment page after successful registration
+        header("Location: appointment_doctor.php");
+        exit;
+>>>>>>> libron
     } else {
         http_response_code(500);
         echo json_encode(['error' => 'Failed to save doctor data']);
