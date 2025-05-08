@@ -9,7 +9,8 @@
       tailwind.config = {
         theme: {
           extend: {
-            colors: { primary: "#4CAF50", secondary: "#2196F3" },
+            colors: { primary: '#3b82f6',
+              secondary: '#6366f1' },
             borderRadius: {
               none: "0px",
               sm: "4px",
@@ -164,27 +165,29 @@
     </style>
   </head>
   <body>
-    <header class="bg-white shadow-sm">
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
-      >
-        <a
-          href=""
-       
-          class="text-2xl font-['Pacifico'] text-primary"
-          >MediConnect</a
-        >
-        <a
-          href="new_home.php"
-       
-          class="flex items-center text-gray-600 hover:text-primary transition-colors"
-        >
-          <div class="w-5 h-5 flex items-center justify-center mr-1">
-            <i class="ri-arrow-left-line"></i>
-          </div>
-          <span>Back to Home</span>
-        </a>
-      </div>
+  <header class="bg-white shadow-sm py-4">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+  <!-- Logo and title -->
+  <div class="flex items-center space-x-2">
+    <img src="assets/logo_without.png" alt="Logo" class="h-10">
+    <span class="text-2xl font-bold">
+    <div class="flex items-center space-x-2">
+ 
+  <span class="text-2xl font-bold">
+    <span class="text-primary">DOC</span><span class="text-gray-500">CALL</span>
+  </span>
+</div>
+</span>
+  </div>
+
+  <!-- Back to home -->
+  <a
+    href="new_home.php"
+    class="text-gray-600 hover:text-primary transition-colors flex items-center"
+  >
+    <i class="ri-arrow-left-line mr-1"></i> Back to Home
+  </a>
+</div>
     </header>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-12">
@@ -463,12 +466,18 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div class="md:col-span-1">
-            <a
-              href=""
-            
-              class="text-2xl font-['Pacifico'] text-primary"
-              >MediConnect</a
-            >
+          <div class="flex items-center space-x-2">
+    <img src="assets/logo_without.png" alt="Logo" class="h-10">
+    <span class="text-2xl font-bold">
+    <div class="flex items-center space-x-2">
+ 
+  <span class="text-2xl font-bold">
+    <span class="text-primary">DOC</span><span class="text-gray-500">CALL</span>
+  </span>
+</div>
+</span>
+  </div>
+  <div class="py-3"></div>
             <p class="mt-2 text-sm text-gray-600">
               Connecting patients with quality healthcare services since 2020.
             </p>
@@ -597,7 +606,7 @@
         <div class="mt-8 pt-8 border-t border-gray-200">
           <div class="flex flex-col md:flex-row justify-between items-center">
             <p class="text-sm text-gray-500">
-              &copy; 2025 MediConnect. All rights reserved.
+              &copy; 2025 DOCCALL. All rights reserved.
             </p>
            
           </div>

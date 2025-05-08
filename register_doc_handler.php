@@ -91,7 +91,9 @@ if ($userStmt->execute()) {
     );
 
     if ($doctorStmt->execute()) {
-        echo json_encode(['message' => 'Doctor registration successful']);
+        // Redirect to appointment page after successful registration
+        header("Location: appointment_doctor.php");
+        exit;
     } else {
         http_response_code(500);
         echo json_encode(['error' => 'Failed to save doctor data']);

@@ -295,12 +295,10 @@ $conn->close();
     <header class="bg-white shadow-sm sticky top-0 z-20">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between h-16">
-                <a href="appointment_doctor.php" class="flex items-center space-x-2 text-primary-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-                    </svg>
-                    <span class="text-2xl font-bold">DOCCALL</span>
-                </a>
+              <a href="appointment_doctor.php" class="flex items-center space-x-2 text-primary-500">
+    <img src="assets/logo_without.png" alt="Logo" class="h-10">
+    <span class="text-2xl font-bold">DOCCALL</span>
+</a>
                 <div class="flex items-center space-x-4">
                     <div class="flex items-center space-x-2">
                         <div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center text-primary-600">

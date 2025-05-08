@@ -9,7 +9,8 @@
       tailwind.config = {
         theme: {
           extend: {
-            colors: { primary: "#4CAF50", secondary: "#64B5F6" },
+            colors: { primary: '#3b82f6',
+              secondary: '#6366f1'  },
             borderRadius: {
               none: "0px",
               sm: "4px",
@@ -62,21 +63,28 @@
   <body class="min-h-screen flex flex-col">
     <!-- Header -->
     <header class="bg-white shadow-sm py-4">
-      <div class="container mx-auto px-4 flex items-center">
-        <a
-          href=""
-          data-readdy="true"
-          class="text-2xl font-['Pacifico'] text-primary"
-          >logo</a
-        >
-        <a
-          href="new_home.php"
-          data-readdy="true"
-          class="ml-6 text-gray-600 hover:text-primary transition-colors flex items-center"
-        >
-          <i class="ri-arrow-left-line mr-1"></i> Back to Home
-        </a>
-      </div>
+    <div class="container mx-auto px-4 flex items-center justify-between">
+  <!-- Logo and title -->
+  <div class="flex items-center space-x-2">
+    <img src="assets/logo_without.png" alt="Logo" class="h-10">
+    <span class="text-2xl font-bold">
+    <div class="flex items-center space-x-2">
+ 
+  <span class="text-2xl font-bold">
+    <span class="text-primary">DOC</span><span class="text-gray-500">CALL</span>
+  </span>
+</div>
+</span>
+  </div>
+
+  <!-- Back to home -->
+  <a
+    href="new_home.php"
+    class="text-gray-600 hover:text-primary transition-colors flex items-center"
+  >
+    <i class="ri-arrow-left-line mr-1"></i> Back to Home
+  </a>
+</div>
     </header>
 
     <!-- Main Content -->
